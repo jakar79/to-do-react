@@ -7,7 +7,7 @@ import {} from '@fortawesome/free-solid-svg-icons';
 function App() {
   return (
     <div className="App">
-      webstylePress
+      webstylePress..
     </div>
   );
 }
