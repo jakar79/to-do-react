@@ -6,3 +6,37 @@ body {
 .App {
   text-align: center;
 }
+
+.taskBg {
+  text-align: left;
+  font-size: 22px;
+  position: relative;
+  background-color: gray;
+  border-radius: 5px;
+  margin: 0 0 15px;
+  padding: 20px 100px 15px 10px;
+}
+
+.taskBg .done .taskText {
+  text-decoration: line-through;
+  opacity: 0.3;
+}
+
+.taskNum {
+  color: #3d3d3d;
+  border: 1px solid #3d3d3d;
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  text-align: center;
+  font-size: 14px;
+  justify-content: center;
+  align-items: center;
+  margin: 0 8px 0 0;
+}
+
+.taskBg div {
+  display: flex;
+  align-items: center;
+}
