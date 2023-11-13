@@ -1,5 +1,5 @@
 body {
-  background-color: #333;
+  background-color: #555;
   color: #fff;
 }
 
@@ -7,19 +7,20 @@ body {
   text-align: center;
 }
 
-.taskBg {
+.taskBg {  
+  background-color: #555;
   text-align: left;
-  font-size: 22px;
+  font-size: 20px;
   position: relative;
-  background-color: gray;
-  border-radius: 5px;
-  margin: 0 0 15px;
-  padding: 20px 100px 15px 10px;
+  border-radius: 10px;
+  margin: 0 0 15px 0;
+  padding: 10px 140px 30px 15px;
 }
 
 .taskBg .done .taskText {
   text-decoration: line-through;
   opacity: 0.3;
+  flex: 1;
 }
 
 .taskNum {
@@ -39,4 +40,24 @@ body {
 .taskBg div {
   display: flex;
   align-items: center;
+}
+
+.taskBg .iconsWrap {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 15px;
+  width: auto;
+  display: inline-block;
+}
+
+.taskBg .iconsWrap span {
+  display: inline-block;
+  margin: 0 10px 0 10px;
+  cursor: pointer;
+  color: darkcyan;
+}
+
+.taskBg .iconsWrap span:hover {
+  color: aqua;
 }

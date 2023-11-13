@@ -56,7 +56,7 @@ function App() {
     <div className="container App">
       <br/><br/>
       <h2>To Do List App</h2>
-
+      <br></br>
       {/* Display ToDos */}
 
       { toDo && toDo.length ? '' : 'No Task...' }
@@ -69,6 +69,17 @@ function App() {
               <div className={task.status ?  'done' : ''}>
                 <span className = "taskNum">{index + 1} </span>
                 <span className = "taskText">{task.title}</span>
+              </div>
+              <div className='iconsWrap'>
+                <span>
+                  <FontAwesomeIcon icon={faCircleCheck} />
+                </span>
+                <span>
+                  <FontAwesomeIcon icon={faPen} />
+                </span>
+                <span>
+                  <FontAwesomeIcon icon={faTrashCan} />
+                </span>
               </div>
             </div>
 
