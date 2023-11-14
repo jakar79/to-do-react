@@ -17,10 +17,13 @@ body {
   padding: 10px 140px 30px 15px;
 }
 
+.taskBg .taskText {
+  flex: 1;
+}
+
 .taskBg .done .taskText {
   text-decoration: line-through;
   opacity: 0.3;
-  flex: 1;
 }
 
 .taskNum {
@@ -60,4 +63,8 @@ body {
 
 .taskBg .iconsWrap span:hover {
   color: aqua;
+}
+
+.mr-20 {
+  margin: 0 25px 0 0;
 }
