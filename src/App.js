@@ -113,7 +113,7 @@ function App() {
             <div className="col taskBg">
               
               <div className={task.status ?  'done' : ''}>
-                <span className = "taskNum">{index + 1} </span>
+                <span className = "taskNum">{index + 1}</span>
                 <span className = "taskText">{task.title}</span>
               </div>
               
