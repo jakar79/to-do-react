@@ -33,7 +33,8 @@ function App() {
   // Delete Task
 
   const deleteTask = (id) => {
-    
+    let newTasks = toDo.filter(task => task.id !== id);
+    setToDo(newTasks);
   };
 
   // Mark task completed
@@ -73,7 +74,7 @@ function App() {
         </div>
         <div className='col-auto'>
           <button 
-            className='btn btn-lg btn-success'>Update
+            className='btn btn-lg btn-success mr-20'>Update
           </button>
           <button 
             className='btn btn-lg btn-warning'>Cancel
@@ -127,7 +128,8 @@ function App() {
                   <FontAwesomeIcon icon={faPen} />
                 </span>
 
-                <span title='Delete'>
+                <span title='Delete' 
+                  onClick={()=> deleteTask(task.id) }>
                   <FontAwesomeIcon icon={faTrashCan} />
                 </span>
               </div>
