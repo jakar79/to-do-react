@@ -130,10 +130,14 @@ function App() {
                   onClick={ (e)=> taskComleted(task.id)}>
                   <FontAwesomeIcon icon={faCircleCheck} />
                 </span>
-                
-                <span title='Edit'>
+
+                {task.status ? null :(
+                  <span title='Edit'>
                   <FontAwesomeIcon icon={faPen} />
                 </span>
+                )}
+                
+                
 
                 <span title='Delete' 
                   onClick={()=> deleteTask(task.id) }>
