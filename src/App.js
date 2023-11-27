@@ -7,10 +7,7 @@ import { faCircleCheck, faPen, faTrashCan } from '@fortawesome/free-solid-svg-ic
 function App() {
 
   //Task Stat
-  const [toDo, setToDo] = useState([
-    {id:1, title: "Task1", status: false},
-    {id:2, title: "Task2", status: false}
-  ]);
+  const [toDo, setToDo] = useState([]);
 
   //Temp Stat
   const [newTask, setNewTask] = useState('');
@@ -52,7 +49,7 @@ function App() {
   //Cancel Update Task
 
   const cancelUpdate = () => {
-    setUpdateData('')
+    setUpdateData('');
   };
 
   //Change Task for update
@@ -83,44 +80,53 @@ function App() {
       <br></br>
 
       {/* Update task */}
+      {updateData && updateData ? (
+        <>
+        <div className='row'>
+          <div className='col'>
+            <input 
+            value={ updateData && updateData.title}
+            onChange={ (e) => changeTask(e)}
+            className='form-control form-control-lg'/>
+          </div>
+          <div className='col-auto'>
+            <button
+              onClick={updateTask} 
+              className='btn btn-lg btn-success mr-20'>Update
+            </button>
+            <button 
+              onClick={cancelUpdate}
+              className='btn btn-lg btn-warning'>Cancel
+            </button>
+          </div>
+        </div>
+        <br />
+        </>
+      ) : (
+        <>
+        {/* Add Task*/}
+        <div className='row'>
+          <div className='col'>
+            <input 
+              className='form-control form-control-lg' 
+              value={newTask} 
+              onChange={(e) => setNewTask(e.target.value)}  
+            />
+          </div>
+          <div className='col-auto'>
+            <button 
+              className='btn btn-lg btn-success' 
+              onClick={addTask}>Add Task
+            </button>
+          </div>
+        </div>
+        <br />
+        </>
+      )}
       
-      <div className='row'>
-        <div className='col'>
-          <input 
-          value={ updateData && updateData.title}
-          onChange={ (e) => changeTask(e)}
-          className='form-control form-control-lg'/>
-        </div>
-        <div className='col-auto'>
-          <button
-            onClick={updateTask} 
-            className='btn btn-lg btn-success mr-20'>Update
-          </button>
-          <button 
-            className='btn btn-lg btn-warning'>Cancel
-          </button>
-        </div>
-      </div>
-      <br />
+      
 
-      {/* Add Task*/}
-      <div className='row'>
-        <div className='col'>
-          <input 
-            className='form-control form-control-lg' 
-            value={newTask} 
-            onChange={(e) => setNewTask(e.target.value)}  
-          />
-        </div>
-        <div className='col-auto'>
-          <button 
-            className='btn btn-lg btn-success' 
-            onClick={addTask}>Add Task
-          </button>
-        </div>
-      </div>
-      <br />
-
+      
       {/* Display ToDos */}
 
       { toDo && toDo.length ? '' : 'No Task...' }
