@@ -30,14 +30,14 @@ function App() {
 
 
 
-  // Delete Task
+  // Remove Tassk
 
   const deleteTask = (id) => {
     let newTasks = toDo.filter(task => task.id !== id);
     setToDo(newTasks);
   };
 
-  // Task its completed
+  // Completed Task
 
   const taskComleted = (id) => {
     let newTask = toDo.map( task => {
@@ -52,19 +52,27 @@ function App() {
   //Cancel Update Task
 
   const cancelUpdate = () => {
-    
+    setUpdateData('')
   };
 
   //Change Task for update
 
   const changeTask = (e) => {
-    
+    let newEntry = {
+      id: updateData.id,
+      title: e.target.value,
+      status: updateData.status ? true : false
+    }
+    setUpdateData(newEntry);
   };
 
   // Update Task
 
   const updateTask = () => {
-    
+    let filterRecords = [...toDo].filter(task => task.id !== updateData.id);
+    let updatedObject = [...filterRecords, updateData];
+    setToDo(updatedObject);
+    setUpdateData('');
   };
 
 
@@ -73,13 +81,19 @@ function App() {
       <br/><br/>
       <h2>To Do List App</h2>
       <br></br>
+
       {/* Update task */}
+      
       <div className='row'>
         <div className='col'>
-          <input className='form-control form-control-lg'/>
+          <input 
+          value={ updateData && updateData.title}
+          onChange={ (e) => changeTask(e)}
+          className='form-control form-control-lg'/>
         </div>
         <div className='col-auto'>
-          <button 
+          <button
+            onClick={updateTask} 
             className='btn btn-lg btn-success mr-20'>Update
           </button>
           <button 
@@ -132,7 +146,11 @@ function App() {
                 </span>
 
                 {task.status ? null :(
-                  <span title='Edit'>
+                  <span title='Edit'
+                  onClick={ () => setUpdateData({
+                    id: task.id,
+                    title: task.title,
+                    status: task.status ? true : false }) }>
                   <FontAwesomeIcon icon={faPen} />
                 </span>
                 )}
