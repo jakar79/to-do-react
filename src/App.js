@@ -100,8 +100,6 @@ function App() {
       )}
       
       
-
-      
       {/* Display ToDos */}
 
       { toDo && toDo.length ? '' : 'No Task...' }
