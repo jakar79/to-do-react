@@ -2,7 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleCheck, faPen, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 
-const Taches = ({ toDo, taskComleted, setUpdateData, deleteTask }) => {
+const ToDo = ({ toDo, taskComleted, setUpdateData, deleteTask }) => {
     return(
         <>
             { toDo && toDo
@@ -53,4 +53,4 @@ const Taches = ({ toDo, taskComleted, setUpdateData, deleteTask }) => {
     )
 }
 
-export default Taches;
+export default ToDo;

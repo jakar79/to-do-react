@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
-import AjoutTacheForm from './components/AjoutTacheForm';
-import MaJForm from './components/MaJForm';
-import Taches from './components/Taches';
+import AddToDoForm from './components/AddToDoForm';
+import UpdateForm from './components/UpdateForm';
+import ToDo from './components/ToDo';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -85,14 +85,14 @@ function App() {
 
       {/* Update task */}
       {updateData && updateData ? (
-        <MaJForm 
+        <UpdateForm 
         updateData = {updateData}
         changeTask = {changeTask}
         updateTask = {updateTask}
         cancelUpdate = {cancelUpdate}
         />
       ) : (
-        <AjoutTacheForm 
+        <AddToDoForm 
           newTask = {newTask}
           setNewTask = { setNewTask}
            addTask = { addTask} 
@@ -104,7 +104,7 @@ function App() {
 
       { toDo && toDo.length ? '' : 'No Task...' }
 
-        <Taches 
+        <ToDo 
           toDo = {toDo}
           taskComleted = {taskComleted}
           setUpdateData = {setUpdateData} 

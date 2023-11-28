@@ -1,4 +1,4 @@
-const AjoutTacheForm = ({ newTask, setNewTask, addTask }) => {
+const AddToDoForm = ({ newTask, setNewTask, addTask }) => {
     return(
         <>
             {/* Add Task*/}
@@ -22,4 +22,4 @@ const AjoutTacheForm = ({ newTask, setNewTask, addTask }) => {
     )
 }
 
-export default AjoutTacheForm;
+export default AddToDoForm;

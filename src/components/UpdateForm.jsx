@@ -1,4 +1,4 @@
-const MaJForm = ({ updateData, changeTask, updateTask, cancelUpdate }) => {
+const UpdateForm = ({ updateData, changeTask, updateTask, cancelUpdate }) => {
     return(
         <>
             <div className='row'>
@@ -24,4 +24,4 @@ const MaJForm = ({ updateData, changeTask, updateTask, cancelUpdate }) => {
     )
 }
 
-export default MaJForm;
+export default UpdateForm;
