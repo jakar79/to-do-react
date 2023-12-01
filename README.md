@@ -58,6 +58,7 @@ yarn create <starter-kit-package> is available in Yarn 0.25+
 It will create a directory called my-app inside the current folder.
 Inside that directory, it will generate the initial project structure and install the transitive dependencies:
 
+```
 my-app
 ├── README.md
 ├── node_modules
@@ -76,7 +77,7 @@ my-app
     ├── logo.svg
     └── serviceWorker.js
     └── setupTests.js
-
+```
 No configuration or complicated folder structures, only the files you need to build your app.
 Once the installation is done, you can open your project folder:
 
